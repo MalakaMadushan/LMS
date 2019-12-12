@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $mul_rows= [
+        $mul_rows_member= [
                 [ 
                 'title'=>'Mr',
                 'category'=>'Student',
@@ -40,9 +40,20 @@ class DatabaseSeeder extends Seeder
                 'regdate'=>'2019-01-01',
                 ]
         ];
-        $insert= DB::table('members')->insert($mul_rows);
+        $insert= DB::table('members')->insert($mul_rows_member);
         // foreach ($mul_rows as $rows) {
            
         // }
+
+        $mul_rows_user= [
+            [  
+            'name'=>'codeaider',
+            'email'=>'info@codeaider.com',
+            'email_verified_at'=>'2019-12-12',
+            'password'=>'ca',
+           
+            ]
+    ];
+    $insert= DB::table('users')->insert($mul_rows_user);
     }
 }
